@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CD61762D-1F20-4316-9FB2-12B77BD6E33F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FlappyBird</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1EF300BB137E7193A782064A91CFF6B9E751F35C</key>
+		<string>https://github.com/ZihanBai/GameDevelop.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FlappyBird/proj.ios_mac/FlappyBird.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1EF300BB137E7193A782064A91CFF6B9E751F35C</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ZihanBai/GameDevelop.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1EF300BB137E7193A782064A91CFF6B9E751F35C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1EF300BB137E7193A782064A91CFF6B9E751F35C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GameDevelop</string>
+		</dict>
+	</array>
+</dict>
+</plist>
