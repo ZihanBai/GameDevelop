@@ -10,9 +10,10 @@
 #include "AtlasLoader.h"
 
 //Initializes the shared object to be nullptr
-AtlasLoader* AtlasLoader::s_sharedAtlasLoader = NULL;
+AtlasLoader* AtlasLoader::s_sharedAtlasLoader = nullptr;
 
-AtlasLoader* AtlasLoader::getInstance(){
+AtlasLoader* AtlasLoader::getInstance()
+{
     if (s_sharedAtlasLoader == NULL) {
         s_sharedAtlasLoader = new AtlasLoader();
         
@@ -25,7 +26,26 @@ AtlasLoader* AtlasLoader::getInstance(){
     return s_sharedAtlasLoader;
 }
 
-void AtlasLoader::loadAtlas(std::string fileName, cocos2d::Texture2D *texture){
+void AtlasLoader::destroy()
+{
+    CC_SAFE_DELETE(s_sharedAtlasLoader);
+}
+
+AtlasLoader::AtlasLoader(){}
+
+bool AtlasLoader::init()
+{
+    return true;
+}
+
+void AtlasLoader::loadAtlas(std::string fileName)
+{
+    auto textureAtlas = cocos2d::Director::getInstance()->getTextureCache()->addImage("atlas.png");
+    this->loadAtlas(fileName,textureAtlas);
+}
+
+void AtlasLoader::loadAtlas(std::string fileName, cocos2d::Texture2D *texture)
+{
     std::string data = cocos2d::FileUtils::getInstance()->getStringFromFile(fileName);
     size_t pos = data.find_first_of("\n");
     std::string line = data.substr(0,pos);
@@ -59,7 +79,10 @@ void AtlasLoader::loadAtlas(std::string fileName, cocos2d::Texture2D *texture){
     }
 }
 
-
+cocos2d::SpriteFrame* AtlasLoader::getSpriteFrame(std::string imageName)
+{
+    return this->_spriteFrames.at(imageName);
+}
 
 
 
