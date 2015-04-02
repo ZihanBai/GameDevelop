@@ -1,0 +1,9 @@
+//
+//  BackgroundLayer.cpp
+//  FlappyBird
+//
+//  Created by baizihan on 4/2/15.
+//
+//
+
+#include "BackgroundLayer.h"

@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		1878D4721ACC30BE006D60A6 /* AtlasLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1878D4711ACC30BE006D60A6 /* AtlasLoader.cpp */; };
+		18A2B7A41ACD6A310015B2D1 /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A2B7A21ACD6A310015B2D1 /* LoadingScene.cpp */; };
+		18A2B7A71ACD6AAC0015B2D1 /* WelcomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A2B7A51ACD6AAC0015B2D1 /* WelcomeScene.cpp */; };
+		18A2B7AA1ACD6ABF0015B2D1 /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A2B7A81ACD6ABF0015B2D1 /* BackgroundLayer.cpp */; };
+		18A2B7C91ACD72910015B2D1 /* 1257355888.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7C11ACD72910015B2D1 /* 1257355888.png */; };
+		18A2B7CA1ACD72910015B2D1 /* atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7C21ACD72910015B2D1 /* atlas.png */; };
+		18A2B7CB1ACD72910015B2D1 /* atlas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7C31ACD72910015B2D1 /* atlas.txt */; };
+		18A2B7CC1ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7C41ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-15.png */; };
+		18A2B7CD1ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-19.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7C51ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-19.png */; };
+		18A2B7CE1ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-23.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7C61ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-23.png */; };
+		18A2B7CF1ACD72910015B2D1 /* Screenshot_2014-03-08-15-05-19.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7C71ACD72910015B2D1 /* Screenshot_2014-03-08-15-05-19.png */; };
+		18A2B7D01ACD72910015B2D1 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7C81ACD72910015B2D1 /* splash.png */; };
+		18A2B7D71ACD72F80015B2D1 /* sfx_die.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7D21ACD72F80015B2D1 /* sfx_die.ogg */; };
+		18A2B7D81ACD72F80015B2D1 /* sfx_hit.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7D31ACD72F80015B2D1 /* sfx_hit.ogg */; };
+		18A2B7D91ACD72F80015B2D1 /* sfx_point.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7D41ACD72F80015B2D1 /* sfx_point.ogg */; };
+		18A2B7DA1ACD72F80015B2D1 /* sfx_swooshing.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7D51ACD72F80015B2D1 /* sfx_swooshing.ogg */; };
+		18A2B7DB1ACD72F80015B2D1 /* sfx_wing.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7D61ACD72F80015B2D1 /* sfx_wing.ogg */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -103,6 +119,25 @@
 /* Begin PBXFileReference section */
 		1878D4701ACC2A86006D60A6 /* AtlasLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasLoader.h; sourceTree = "<group>"; };
 		1878D4711ACC30BE006D60A6 /* AtlasLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AtlasLoader.cpp; sourceTree = "<group>"; };
+		18A2B7A21ACD6A310015B2D1 /* LoadingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingScene.cpp; sourceTree = "<group>"; };
+		18A2B7A31ACD6A310015B2D1 /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScene.h; sourceTree = "<group>"; };
+		18A2B7A51ACD6AAC0015B2D1 /* WelcomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WelcomeScene.cpp; sourceTree = "<group>"; };
+		18A2B7A61ACD6AAC0015B2D1 /* WelcomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScene.h; sourceTree = "<group>"; };
+		18A2B7A81ACD6ABF0015B2D1 /* BackgroundLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroundLayer.cpp; sourceTree = "<group>"; };
+		18A2B7A91ACD6ABF0015B2D1 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		18A2B7C11ACD72910015B2D1 /* 1257355888.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1257355888.png; sourceTree = "<group>"; };
+		18A2B7C21ACD72910015B2D1 /* atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atlas.png; sourceTree = "<group>"; };
+		18A2B7C31ACD72910015B2D1 /* atlas.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = atlas.txt; sourceTree = "<group>"; };
+		18A2B7C41ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot_2014-03-08-15-04-15.png"; sourceTree = "<group>"; };
+		18A2B7C51ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot_2014-03-08-15-04-19.png"; sourceTree = "<group>"; };
+		18A2B7C61ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot_2014-03-08-15-04-23.png"; sourceTree = "<group>"; };
+		18A2B7C71ACD72910015B2D1 /* Screenshot_2014-03-08-15-05-19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot_2014-03-08-15-05-19.png"; sourceTree = "<group>"; };
+		18A2B7C81ACD72910015B2D1 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		18A2B7D21ACD72F80015B2D1 /* sfx_die.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_die.ogg; sourceTree = "<group>"; };
+		18A2B7D31ACD72F80015B2D1 /* sfx_hit.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_hit.ogg; sourceTree = "<group>"; };
+		18A2B7D41ACD72F80015B2D1 /* sfx_point.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_point.ogg; sourceTree = "<group>"; };
+		18A2B7D51ACD72F80015B2D1 /* sfx_swooshing.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swooshing.ogg; sourceTree = "<group>"; };
+		18A2B7D61ACD72F80015B2D1 /* sfx_wing.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_wing.ogg; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -216,6 +251,33 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		18A2B7C01ACD72910015B2D1 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				18A2B7C11ACD72910015B2D1 /* 1257355888.png */,
+				18A2B7C21ACD72910015B2D1 /* atlas.png */,
+				18A2B7C31ACD72910015B2D1 /* atlas.txt */,
+				18A2B7C41ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-15.png */,
+				18A2B7C51ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-19.png */,
+				18A2B7C61ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-23.png */,
+				18A2B7C71ACD72910015B2D1 /* Screenshot_2014-03-08-15-05-19.png */,
+				18A2B7C81ACD72910015B2D1 /* splash.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		18A2B7D11ACD72F80015B2D1 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				18A2B7D21ACD72F80015B2D1 /* sfx_die.ogg */,
+				18A2B7D31ACD72F80015B2D1 /* sfx_hit.ogg */,
+				18A2B7D41ACD72F80015B2D1 /* sfx_point.ogg */,
+				18A2B7D51ACD72F80015B2D1 /* sfx_swooshing.ogg */,
+				18A2B7D61ACD72F80015B2D1 /* sfx_wing.ogg */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +335,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18A2B7D11ACD72F80015B2D1 /* sounds */,
+				18A2B7C01ACD72910015B2D1 /* image */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
@@ -287,6 +351,12 @@
 			isa = PBXGroup;
 			children = (
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
+				18A2B7A21ACD6A310015B2D1 /* LoadingScene.cpp */,
+				18A2B7A31ACD6A310015B2D1 /* LoadingScene.h */,
+				18A2B7A81ACD6ABF0015B2D1 /* BackgroundLayer.cpp */,
+				18A2B7A91ACD6ABF0015B2D1 /* BackgroundLayer.h */,
+				18A2B7A51ACD6AAC0015B2D1 /* WelcomeScene.cpp */,
+				18A2B7A61ACD6AAC0015B2D1 /* WelcomeScene.h */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
@@ -446,25 +516,38 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				18A2B7D91ACD72F80015B2D1 /* sfx_point.ogg in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				18A2B7DA1ACD72F80015B2D1 /* sfx_swooshing.ogg in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				18A2B7CC1ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-15.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				18A2B7D01ACD72910015B2D1 /* splash.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
+				18A2B7CF1ACD72910015B2D1 /* Screenshot_2014-03-08-15-05-19.png in Resources */,
+				18A2B7CA1ACD72910015B2D1 /* atlas.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				18A2B7CD1ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-19.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
+				18A2B7DB1ACD72F80015B2D1 /* sfx_wing.ogg in Resources */,
+				18A2B7CB1ACD72910015B2D1 /* atlas.txt in Resources */,
+				18A2B7D81ACD72F80015B2D1 /* sfx_hit.ogg in Resources */,
+				18A2B7CE1ACD72910015B2D1 /* Screenshot_2014-03-08-15-04-23.png in Resources */,
+				18A2B7D71ACD72F80015B2D1 /* sfx_die.ogg in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
+				18A2B7C91ACD72910015B2D1 /* 1257355888.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
@@ -492,9 +575,12 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				18A2B7AA1ACD6ABF0015B2D1 /* BackgroundLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				18A2B7A71ACD6AAC0015B2D1 /* WelcomeScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1878D4721ACC30BE006D60A6 /* AtlasLoader.cpp in Sources */,
+				18A2B7A41ACD6A310015B2D1 /* LoadingScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

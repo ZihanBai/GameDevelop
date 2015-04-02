@@ -1,5 +1,9 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
+#include "LoadingScene.h"
+
+#define kDesignWidth    288
+#define kDesignHeight   512
 
 USING_NS_CC;
 
@@ -27,18 +31,20 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::createWithRect("FlappyBird", cocos2d::Rect(0,0,kDesignWidth,kDesignHeight));
         director->setOpenGLView(glview);
     }
 
+    this->setResourceSearchResolution();
+    
     // turn on display FPS
-    director->setDisplayStats(true);
+    director->setDisplayStats(false);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = LoadingScene::create();
 
     // run
     director->runWithScene(scene);
@@ -60,4 +66,13 @@ void AppDelegate::applicationWillEnterForeground() {
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+}
+
+void AppDelegate::setResourceSearchResolution()
+{
+    std::vector<std::string> paths;
+    paths.push_back("fonts");
+    paths.push_back("image");
+    paths.push_back("sounds");
+    FileUtils::getInstance()->setSearchResolutionsOrder(paths);
 }
