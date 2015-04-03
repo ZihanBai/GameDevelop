@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1816EA061ACEE56F00C02B99 /* BirdSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1816EA041ACEE56F00C02B99 /* BirdSprite.cpp */; };
 		1878D4721ACC30BE006D60A6 /* AtlasLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1878D4711ACC30BE006D60A6 /* AtlasLoader.cpp */; };
 		18A2B7A41ACD6A310015B2D1 /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A2B7A21ACD6A310015B2D1 /* LoadingScene.cpp */; };
 		18A2B7A71ACD6AAC0015B2D1 /* WelcomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A2B7A51ACD6AAC0015B2D1 /* WelcomeScene.cpp */; };
@@ -117,6 +118,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1816EA041ACEE56F00C02B99 /* BirdSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BirdSprite.cpp; sourceTree = "<group>"; };
+		1816EA051ACEE56F00C02B99 /* BirdSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdSprite.h; sourceTree = "<group>"; };
 		1878D4701ACC2A86006D60A6 /* AtlasLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasLoader.h; sourceTree = "<group>"; };
 		1878D4711ACC30BE006D60A6 /* AtlasLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AtlasLoader.cpp; sourceTree = "<group>"; };
 		18A2B7A21ACD6A310015B2D1 /* LoadingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingScene.cpp; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				1878D4701ACC2A86006D60A6 /* AtlasLoader.h */,
 				1878D4711ACC30BE006D60A6 /* AtlasLoader.cpp */,
+				1816EA041ACEE56F00C02B99 /* BirdSprite.cpp */,
+				1816EA051ACEE56F00C02B99 /* BirdSprite.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -578,6 +583,7 @@
 				18A2B7AA1ACD6ABF0015B2D1 /* BackgroundLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				18A2B7A71ACD6AAC0015B2D1 /* WelcomeScene.cpp in Sources */,
+				1816EA061ACEE56F00C02B99 /* BirdSprite.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1878D4721ACC30BE006D60A6 /* AtlasLoader.cpp in Sources */,
 				18A2B7A41ACD6A310015B2D1 /* LoadingScene.cpp in Sources */,
