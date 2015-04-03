@@ -68,7 +68,7 @@ public:
      *
      *  @return the sprite frame object related to an image
      */
-    cocos2d::SpriteFrame* getSpriteFrame(std::string imageName);
+    cocos2d::SpriteFrame* getSpriteFrameByName(std::string imageName);
     
 protected:
     /**

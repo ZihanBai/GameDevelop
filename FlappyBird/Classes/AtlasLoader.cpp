@@ -79,7 +79,7 @@ void AtlasLoader::loadAtlas(std::string fileName, cocos2d::Texture2D *texture)
     }
 }
 
-cocos2d::SpriteFrame* AtlasLoader::getSpriteFrame(std::string imageName)
+cocos2d::SpriteFrame* AtlasLoader::getSpriteFrameByName(std::string imageName)
 {
     return this->_spriteFrames.at(imageName);
 }
