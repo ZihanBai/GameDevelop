@@ -30,11 +30,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
+//    auto eglView = GLView::getInstance();
     if(!glview) {
-        glview = GLViewImpl::createWithRect("FlappyBird", cocos2d::Rect(0,0,kDesignWidth,kDesignHeight));
+        glview->setDesignResolutionSize(288, 512, ResolutionPolicy::SHOW_ALL);
+//        glview = GLViewImpl::createWithRect("FlappyBird", cocos2d::Rect(0,0,kDesignWidth,kDesignHeight));
         director->setOpenGLView(glview);
     }
 
+    
+    
     this->setResourceSearchResolution();
     
     // turn on display FPS
