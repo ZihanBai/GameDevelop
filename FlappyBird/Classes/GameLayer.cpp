@@ -29,6 +29,7 @@ bool GameLayer::init(){
         body->setDynamic(true);
         body->setLinearDamping(0.0f);
         body->setGravityEnable(false);
+        body->setContactTestBitmask(0x01);
         this->bird->setPhysicsBody(body);
         this->bird->setPosition(origin.x + visiableSize.width*1/3 - 5,origin.y + visiableSize.height/2 + 5);
         this->bird->idle();
@@ -41,6 +42,7 @@ bool GameLayer::init(){
         groundBody->addShape(PhysicsShapeBox::create(Size(288, landHeight)));
         groundBody->setDynamic(false);
         groundBody->setLinearDamping(0.0f);
+        groundBody->setContactTestBitmask(0x01);
         this->groundNode->setPhysicsBody(groundBody);
         this->groundNode->setPosition(144, landHeight/2);
         this->addChild(this->groundNode);
@@ -64,14 +66,15 @@ bool GameLayer::init(){
         auto contactListener = EventListenerPhysicsContact::create();
         contactListener->onContactBegin = CC_CALLBACK_1(GameLayer::onContactBegin, this);
         this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
-        
+        //auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(GameLayer::onContactBegin, this));
+        //this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
         return true;
     }else{
         return false;
     }
 }
 
-bool GameLayer::onContactBegin(EventCustom *event, const PhysicsContact& contact) {
+bool GameLayer::onContactBegin(PhysicsContact& contact) {
     this->gameOver();
     return true;
 }
@@ -95,19 +98,109 @@ void GameLayer::scrollLand(float dt){
     }
 }
 
+void GameLayer::onTouch() {
+    if(this->gameStatus == GAME_STATUS_OVER) {
+        return;
+    }
+    
+    SimpleAudioEngine::getInstance()->playEffect("sfx_wing.ogg");
+    if(this->gameStatus == GAME_STATUS_READY) {
+        this->delegator->onGameStart();
+        this->bird->fly();
+        this->gameStatus = GAME_STATUS_START;
+        this->createPips();
+    }else if(this->gameStatus == GAME_STATUS_START) {
+        this->bird->getPhysicsBody()->setVelocity(Vect(0, 260));
+    }
+}
+
+void GameLayer::rotateBird() {
+    float verticalSpeed = this->bird->getPhysicsBody()->getVelocity().y;
+    this->bird->setRotation(min(max(-90, (verticalSpeed*0.2 + 60)), 30));
+}
 
 
+void GameLayer::update(float delta) {
+    if (this->gameStatus == GAME_STATUS_START) {
+        this->rotateBird();
+        this->checkHit();
+    }
+}
 
+void GameLayer::createPips() {
+    // Create the pips
+    for (int i = 0; i < PIP_COUNT; i++) {
+        Size visibleSize = Director::getInstance()->getVisibleSize();
+        Sprite *pipUp = Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("pipe_up"));
+        Sprite *pipDown = Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("pipe_down"));
+        Node *singlePip = Node::create();
+        
+        // bind to pair
+        pipDown->setPosition(0, PIP_HEIGHT + PIP_DISTANCE);
+        singlePip->addChild(pipDown, 0, DOWN_PIP);
+        singlePip->addChild(pipUp, 0, UP_PIP);
+        singlePip->setPosition(visibleSize.width + i*PIP_INTERVAL + WAIT_DISTANCE, this->getRandomHeight());
+        auto body = PhysicsBody::create();
+        auto shapeBoxDown = PhysicsShapeBox::create(pipDown->getContentSize(),PHYSICSSHAPE_MATERIAL_DEFAULT, Point(0, PIP_HEIGHT + PIP_DISTANCE));
+        body->addShape(shapeBoxDown);
+        body->addShape(PhysicsShapeBox::create(pipUp->getContentSize()));
+        body->setDynamic(false);
+        singlePip->setPhysicsBody(body);
+        singlePip->setTag(PIP_NEW);
+        
+        this->addChild(singlePip);
+        this->pips.push_back(singlePip);
+    }
+}
 
+int GameLayer::getRandomHeight() {
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    return rand()%(int)(2*PIP_HEIGHT + PIP_DISTANCE - visibleSize.height);
+}
 
+void GameLayer::checkHit() {
+    for(auto pip : this->pips) {
+        if (pip->getTag() == PIP_NEW) {
+            if (pip->getPositionX() < this->bird->getPositionX()) {
+                SimpleAudioEngine::getInstance()->playEffect("sfx_point.ogg");
+                this->score ++;
+                this->delegator->onGamePlaying(this->score);
+                pip->setTag(PIP_PASS);
+            }
+        }
+    }
+}
 
+void GameLayer::gameOver() {
+    if(this->gameStatus == GAME_STATUS_OVER) {
+        return;
+    }
+    SimpleAudioEngine::getInstance()->playEffect("sfx_hit.ogg");
+    //get the best score
+    int bestScore = UserRecord::getInstance()->readIntegerFromUserDefault("best_score");
+    //update the best score
+    if(this->score > bestScore){
+        UserRecord::getInstance()->saveIntegerToUserDefault("best_score",this->score);
+    }
+    this->delegator->onGameEnd(this->score, bestScore);
+    this->unschedule(shiftLand);
+    SimpleAudioEngine::getInstance()->playEffect("sfx_die.ogg");
+    this->bird->die();
+    this->bird->setRotation(-90);
+    this->birdSpriteFadeOut();
+    this->gameStatus = GAME_STATUS_OVER;
+}
 
+void GameLayer::birdSpriteFadeOut(){
+    FadeOut* animation = FadeOut::create(1.5);
+    CallFunc* animationDone = CallFunc::create(bind(&GameLayer::birdSpriteRemove,this));
+    Sequence* sequence = Sequence::createWithTwoActions(animation,animationDone);
+    this->bird->stopAllActions();
+    this->bird->runAction(sequence);
+}
 
-
-
-
-
-
-
-
+void GameLayer::birdSpriteRemove(){
+    this->bird->setRotation(0);
+    this->removeChild(this->bird);
+}
 

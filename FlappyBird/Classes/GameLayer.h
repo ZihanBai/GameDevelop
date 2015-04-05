@@ -185,7 +185,7 @@ private:
     
     void scrollLand(float dt);
     
-    bool onContactBegin(EventCustom *event, const PhysicsContact& contact);
+    bool onContactBegin(PhysicsContact& contact);
     
     void gameOver();
 };
