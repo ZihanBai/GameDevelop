@@ -27,6 +27,7 @@
 		18A2B7D91ACD72F80015B2D1 /* sfx_point.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7D41ACD72F80015B2D1 /* sfx_point.ogg */; };
 		18A2B7DA1ACD72F80015B2D1 /* sfx_swooshing.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7D51ACD72F80015B2D1 /* sfx_swooshing.ogg */; };
 		18A2B7DB1ACD72F80015B2D1 /* sfx_wing.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 18A2B7D61ACD72F80015B2D1 /* sfx_wing.ogg */; };
+		18CDF34E1AD170FC00CE03C4 /* OptionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF34C1AD170FC00CE03C4 /* OptionLayer.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -147,6 +148,8 @@
 		18A2B7D41ACD72F80015B2D1 /* sfx_point.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_point.ogg; sourceTree = "<group>"; };
 		18A2B7D51ACD72F80015B2D1 /* sfx_swooshing.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swooshing.ogg; sourceTree = "<group>"; };
 		18A2B7D61ACD72F80015B2D1 /* sfx_wing.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_wing.ogg; sourceTree = "<group>"; };
+		18CDF34C1AD170FC00CE03C4 /* OptionLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptionLayer.cpp; sourceTree = "<group>"; };
+		18CDF34D1AD170FC00CE03C4 /* OptionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionLayer.h; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -367,6 +370,8 @@
 				18A2B7A61ACD6AAC0015B2D1 /* WelcomeScene.h */,
 				18A2B7A51ACD6AAC0015B2D1 /* WelcomeScene.cpp */,
 				183EDF231AD0228100376523 /* WelcomeLayer.cpp */,
+				18CDF34C1AD170FC00CE03C4 /* OptionLayer.cpp */,
+				18CDF34D1AD170FC00CE03C4 /* OptionLayer.h */,
 				183EDF241AD0228100376523 /* WelcomeLayer.h */,
 				183EDF261AD023DE00376523 /* GameScene.cpp */,
 				183EDF271AD023DE00376523 /* GameScene.h */,
@@ -596,6 +601,7 @@
 				1816EA061ACEE56F00C02B99 /* BirdSprite.cpp in Sources */,
 				183EDF251AD0228100376523 /* WelcomeLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				18CDF34E1AD170FC00CE03C4 /* OptionLayer.cpp in Sources */,
 				1878D4721ACC30BE006D60A6 /* AtlasLoader.cpp in Sources */,
 				18A2B7A41ACD6A310015B2D1 /* LoadingScene.cpp in Sources */,
 				183EDF281AD023DE00376523 /* GameScene.cpp in Sources */,
