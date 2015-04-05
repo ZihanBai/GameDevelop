@@ -110,25 +110,3 @@ Node* Number::convert(const char *name, int number,Gravity gravity){
     }
     return numberNode;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

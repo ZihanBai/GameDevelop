@@ -10,14 +10,23 @@
 #define __FlappyBird__GameScene__
 
 #include "cocos2d.h"
+#include "BackgroundLayer.h"
+#include "GameLayer.h"
+#include "StatusLayer.h"
+#include "OptionLayer.h"
 
 using namespace cocos2d;
-using namespace std;
 
-class GameScene : public Scene {
+class GameScene:public Scene{
 public:
     GameScene();
+    
     ~GameScene();
+    
+    bool virtual init();
+    
+    void restart();
+    
     CREATE_FUNC(GameScene);
 };
 

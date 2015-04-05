@@ -31,6 +31,7 @@
 		18CDF3511AD174A100CE03C4 /* StatusLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF34F1AD174A100CE03C4 /* StatusLayer.cpp */; };
 		18CDF3541AD174FE00CE03C4 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF3521AD174FE00CE03C4 /* GameLayer.cpp */; };
 		18CDF3571AD1752600CE03C4 /* Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF3551AD1752600CE03C4 /* Number.cpp */; };
+		18CDF35A1AD182C800CE03C4 /* UserRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18CDF3581AD182C800CE03C4 /* UserRecord.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -159,6 +160,8 @@
 		18CDF3531AD174FE00CE03C4 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		18CDF3551AD1752600CE03C4 /* Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Number.cpp; sourceTree = "<group>"; };
 		18CDF3561AD1752600CE03C4 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Number.h; sourceTree = "<group>"; };
+		18CDF3581AD182C800CE03C4 /* UserRecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserRecord.cpp; sourceTree = "<group>"; };
+		18CDF3591AD182C800CE03C4 /* UserRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecord.h; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -380,13 +383,15 @@
 				18A2B7A51ACD6AAC0015B2D1 /* WelcomeScene.cpp */,
 				183EDF231AD0228100376523 /* WelcomeLayer.cpp */,
 				18CDF34C1AD170FC00CE03C4 /* OptionLayer.cpp */,
+				18CDF34D1AD170FC00CE03C4 /* OptionLayer.h */,
 				18CDF34F1AD174A100CE03C4 /* StatusLayer.cpp */,
 				18CDF3501AD174A100CE03C4 /* StatusLayer.h */,
 				18CDF3551AD1752600CE03C4 /* Number.cpp */,
 				18CDF3561AD1752600CE03C4 /* Number.h */,
 				18CDF3521AD174FE00CE03C4 /* GameLayer.cpp */,
 				18CDF3531AD174FE00CE03C4 /* GameLayer.h */,
-				18CDF34D1AD170FC00CE03C4 /* OptionLayer.h */,
+				18CDF3581AD182C800CE03C4 /* UserRecord.cpp */,
+				18CDF3591AD182C800CE03C4 /* UserRecord.h */,
 				183EDF241AD0228100376523 /* WelcomeLayer.h */,
 				183EDF261AD023DE00376523 /* GameScene.cpp */,
 				183EDF271AD023DE00376523 /* GameScene.h */,
@@ -619,6 +624,7 @@
 				183EDF251AD0228100376523 /* WelcomeLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				18CDF34E1AD170FC00CE03C4 /* OptionLayer.cpp in Sources */,
+				18CDF35A1AD182C800CE03C4 /* UserRecord.cpp in Sources */,
 				1878D4721ACC30BE006D60A6 /* AtlasLoader.cpp in Sources */,
 				18A2B7A41ACD6A310015B2D1 /* LoadingScene.cpp in Sources */,
 				18CDF3511AD174A100CE03C4 /* StatusLayer.cpp in Sources */,
