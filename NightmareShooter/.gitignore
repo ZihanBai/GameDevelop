@@ -1,0 +1,13 @@
+Temp
+Library
+Assets/Materials
+Assets/Models
+Assets/Audio
+Assets/Fonts
+Assets/MobileInput
+Assets/Prefabs
+Assets/Shader
+Assets/Textures
+*.meta
+*csproj
+*.sln
