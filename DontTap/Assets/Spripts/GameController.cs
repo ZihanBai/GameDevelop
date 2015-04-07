@@ -66,6 +66,7 @@ public class GameController : MonoBehaviour {
 	/// </summary>
 	/// <param name="block">Block.</param>
 	public void Select(Block block){
+		GetComponent<AudioSource>().Play ();
 		score += block.cantTap ? -5 : 1;
 		for (int i = 0; i < blocks.Count; i++) {
 			Block b = (Block)blocks[i];
@@ -87,6 +88,7 @@ public class GameController : MonoBehaviour {
 			Destroy(b.gameObject);
 			--i;
 		}
+		score = 0;
 	}
 
 }
