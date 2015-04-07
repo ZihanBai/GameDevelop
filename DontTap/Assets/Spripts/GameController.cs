@@ -66,17 +66,22 @@ public class GameController : MonoBehaviour {
 	/// </summary>
 	/// <param name="block">Block.</param>
 	public void Select(Block block){
+		//play click sound
 		GetComponent<AudioSource>().Play ();
+		//count score
 		score += block.cantTap ? -5 : 1;
 		for (int i = 0; i < blocks.Count; i++) {
 			Block b = (Block)blocks[i];
+			//move down block
 			b.MoveDown();
+			//remove out block
 			if(b.rowIndex == -1){
 				blocks.Remove(b);
 				Destroy(b.gameObject);
 				--i;
 			}
 		}
+		//add block on 4th row
 		AddBlock (3);
 	}
 
