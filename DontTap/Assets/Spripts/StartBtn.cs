@@ -13,5 +13,6 @@ public class StartBtn : MonoBehaviour {
 	void OnMouseDown () {
 //		print("StartBtn onMouseDown");
 		gameController.EnterGameUI ();
+		GameController.showScore = true;
 	}
 }
