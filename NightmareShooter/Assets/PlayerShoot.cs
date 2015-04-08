@@ -34,6 +34,9 @@ public class PlayerShoot : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Shoot this instance.
+	/// </summary>
 	void Shoot(){
 		GetComponent<Light>().enabled = true;
 		particleSystem.Play ();
@@ -50,6 +53,9 @@ public class PlayerShoot : MonoBehaviour {
 		Invoke("ClearEffect",0.05f);
 	}
 
+	/// <summary>
+	/// Clears the effect.
+	/// </summary>
 	void ClearEffect(){
 		GetComponent<Light>().enabled = false;
 		lineRenderer.enabled = false;
