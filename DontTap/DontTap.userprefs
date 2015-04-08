@@ -1,12 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Spripts/UI.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../NightmareShooter/Assets/PlayerMove.cs">
     <Files>
-      <File FileName="Assets/Spripts/GameController.cs" Line="71" Column="16" />
-      <File FileName="Assets/Spripts/Block.cs" Line="6" Column="15" />
-      <File FileName="Assets/Spripts/Game.cs" Line="13" Column="2" />
-      <File FileName="Assets/Spripts/StartBtn.cs" Line="6" Column="2" />
-      <File FileName="Assets/Spripts/UI.cs" Line="6" Column="2" />
+      <File FileName="../NightmareShooter/Assets/PlayerMove.cs" Line="20" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
