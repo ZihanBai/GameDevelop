@@ -46,6 +46,7 @@ public class PlayerShoot : MonoBehaviour {
 		} else {
 			lineRenderer.SetPosition(1,transform.position + transform.forward*100);
 		}
+		this.GetComponent<AudioSource> ().Play ();
 		Invoke("ClearEffect",0.05f);
 	}
 

@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour {
 	/// </summary>
 	private PlayerMove playerMove;
 
+	private PlayerShoot playerShoot;
+
 	/// <summary>
 	/// The body renderer.
 	/// </summary>
@@ -30,6 +32,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Awake(){
 		animator = this.GetComponent<Animator> ();
 		playerMove = this.GetComponent<PlayerMove> ();
+		playerShoot = this.GetComponentInChildren<PlayerShoot> ();
 		bodyRenderer = transform.Find ("Player").GetComponent<Renderer>() as SkinnedMeshRenderer;
 	}
 
@@ -44,7 +47,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void TakeDamage(float damage){
-		print("TakeDamage");
+//		print("TakeDamage");
 		if(hp <= 0f) return;
 		hp -= damage;
 		bodyRenderer.material.color = Color.red;
@@ -57,5 +60,6 @@ public class PlayerHealth : MonoBehaviour {
 	private void Dead(){
 		animator.SetBool ("Dead", true);
 		this.playerMove.enabled = false;
+		this.playerShoot.enabled = false;
 	}
 }
