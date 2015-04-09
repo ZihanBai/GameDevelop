@@ -20,13 +20,13 @@ public class PlayerShoot : MonoBehaviour {
 	/// <summary>
 	/// The particle system.
 	/// </summary>
-	private ParticleSystem particleSystem;
+	private ParticleSystem partiSystem;
 
 	private LineRenderer lineRenderer;
 
 	// Use this for initialization
 	void Start () {
-		particleSystem = this.GetComponentInChildren<ParticleSystem> ();
+		partiSystem = this.GetComponentInChildren<ParticleSystem> ();
 		lineRenderer = this.GetComponent<LineRenderer> () as LineRenderer;
 	}
 	
@@ -44,7 +44,7 @@ public class PlayerShoot : MonoBehaviour {
 	/// </summary>
 	void Shoot(){
 		GetComponent<Light>().enabled = true;
-		particleSystem.Play ();
+		partiSystem.Play ();
 		lineRenderer.enabled = true;
 		lineRenderer.SetPosition (0, transform.position);
 		Ray ray = new Ray (transform.position, transform.forward);
@@ -53,7 +53,7 @@ public class PlayerShoot : MonoBehaviour {
 			lineRenderer.SetPosition (1, hitInfo.point);
 			//if shoot enemy
 			if(hitInfo.collider.tag == Tags.enemy){
-				hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(attack);
+				hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(attack,hitInfo.point);
 			}
 		} else {
 			lineRenderer.SetPosition(1,transform.position + transform.forward*100);

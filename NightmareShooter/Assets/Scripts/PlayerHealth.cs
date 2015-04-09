@@ -36,11 +36,11 @@ public class PlayerHealth : MonoBehaviour {
 		bodyRenderer = transform.Find ("Player").GetComponent<Renderer>() as SkinnedMeshRenderer;
 	}
 
-	void FixedUpdate(){
-		if (Input.GetMouseButtonDown (0)) {
-			TakeDamage(30f);
-		}
-	}
+//	void FixedUpdate(){
+//		if (Input.GetMouseButtonDown (0)) {
+//			TakeDamage(30f);
+//		}
+//	}
 
 	void Update(){
 		bodyRenderer.material.color = Color.Lerp (bodyRenderer.material.color, Color.white, smoothing * Time.deltaTime);
