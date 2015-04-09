@@ -9,4 +9,9 @@ public class Tags {
 	/// The player.
 	/// </summary>
 	public const string player = "Player";
+
+	/// <summary>
+	/// The enemy.
+	/// </summary>
+	public const string enemy = "Enemy";
 }

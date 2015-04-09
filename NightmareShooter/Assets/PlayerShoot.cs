@@ -8,6 +8,11 @@ public class PlayerShoot : MonoBehaviour {
 	public float shootRate = 2f;
 
 	/// <summary>
+	/// The attack.
+	/// </summary>
+	public float attack = 30f;
+
+	/// <summary>
 	/// The timer.
 	/// </summary>
 	private float timer = 0f;
@@ -46,6 +51,10 @@ public class PlayerShoot : MonoBehaviour {
 		RaycastHit hitInfo;
 		if (Physics.Raycast (ray, out hitInfo)) {
 			lineRenderer.SetPosition (1, hitInfo.point);
+			//if shoot enemy
+			if(hitInfo.collider.tag == Tags.enemy){
+				hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(attack);
+			}
 		} else {
 			lineRenderer.SetPosition(1,transform.position + transform.forward*100);
 		}
