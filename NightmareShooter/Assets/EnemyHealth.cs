@@ -8,12 +8,16 @@ public class EnemyHealth : MonoBehaviour {
 	private NavMeshAgent agent;
 	private EnemyMove enemyMove;
 	private CapsuleCollider capCollider;
+	private AudioSource hurtAudio;
+
+	public AudioClip deathAudio;
 
 	void Awake(){
 		anim = this.GetComponent<Animator> ();
 		agent = this.GetComponent<NavMeshAgent> ();
 		enemyMove = this.GetComponent<EnemyMove> ();
 		capCollider = this.GetComponent<CapsuleCollider> ();
+		hurtAudio = this.GetComponent<AudioSource> ();
 	}
 
 	void Update(){
@@ -32,6 +36,7 @@ public class EnemyHealth : MonoBehaviour {
 	public void TakeDamage(float damage){
 		if (this.hp <= 0f)
 			return;
+		hurtAudio.Play ();
 		this.hp -= damage;
 		if (this.hp <= 0f) {
 			Dead();
@@ -46,5 +51,6 @@ public class EnemyHealth : MonoBehaviour {
 		agent.enabled = false;
 		enemyMove.enabled = false;
 		capCollider.enabled = false;
+		AudioSource.PlayClipAtPoint (deathAudio, transform.position, 0.5f);
 	}
 }
