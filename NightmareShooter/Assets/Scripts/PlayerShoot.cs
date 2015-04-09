@@ -5,7 +5,7 @@ public class PlayerShoot : MonoBehaviour {
 	/// <summary>
 	/// The shoot rate.
 	/// </summary>
-	public float shootRate = 2f;
+	public float shootRate = 5f;
 
 	/// <summary>
 	/// The attack.
