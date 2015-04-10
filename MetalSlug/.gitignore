@@ -1,0 +1,10 @@
+Temp
+Library
+Assets/NGUI
+/Assets/Images/*
+!/Assets/Images/Atlas
+Assets/Sound
+!/Assets/Images/Atlas
+*.meta
+*csproj
+*.sln
