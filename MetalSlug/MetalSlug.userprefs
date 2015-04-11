@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../MetalSlug/Assets/Game_MenuController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game_MenuController.cs">
     <Files>
-      <File FileName="../MetalSlug/Assets/Game_MenuController.cs" Line="41" Column="27" />
+      <File FileName="Assets/Game_MenuController.cs" Line="41" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
