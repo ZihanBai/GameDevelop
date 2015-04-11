@@ -55,7 +55,7 @@ public class Car : MonoBehaviour {
 		foreach(Wheel w in wheels){
 			w.Start(); 
 		}
-//		Destroy (this.gameObject,1f);
+		Destroy (this.gameObject,1f);
 	}
 
 	private void PlaySound(){
