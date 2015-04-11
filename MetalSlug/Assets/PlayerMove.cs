@@ -86,6 +86,27 @@ public class PlayerMove : MonoBehaviour {
 			playerJump.gameObject.SetActive(true);
 			break;
 		}
-
+		//player direction
+		float x = 1;
+		if (myRigidBody.velocity.x > 0.05f) {
+			x = -1;
+		} else if (myRigidBody.velocity.x < 0.05f) {
+			x = 1;
+		} else {
+			x = 0;
+		}
+		if (x != 0) {
+			playerGround.transform.localScale = new Vector3(x,1,1);
+			playerDown.transform.localScale = new Vector3(x,1,1);
+			playerJump.transform.localScale = new Vector3(x,1,1);
+		}
+		//change player's state
+		if (Mathf.Abs (myRigidBody.velocity.x) > 0.05f) {
+			playerGround.status = AnimStatus.Walk;
+			playerDown.status = AnimStatus.Walk;
+		} else {
+			playerGround.status = AnimStatus.Idel;
+			playerDown.status = AnimStatus.Idel;
+		}
 	}
 }
