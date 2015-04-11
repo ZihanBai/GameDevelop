@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Car.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlayerDown.cs">
     <Files>
-      <File FileName="Assets/Car.cs" Line="58" Column="3" />
-      <File FileName="Assets/Wheel.cs" Line="11" Column="9" />
-      <File FileName="Assets/Damper.cs" Line="22" Column="17" />
+      <File FileName="Assets/PlayerGround.cs" Line="5" Column="7" />
+      <File FileName="Assets/PlayerDown.cs" Line="130" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
