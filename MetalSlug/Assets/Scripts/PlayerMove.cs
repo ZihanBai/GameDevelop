@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour {
 
 	private int groundLayerMask;
 
-	public Rigidbody myRigidBody;
+	private Rigidbody myRigidBody;
 
 	private bool isBottomBtnClick = false;
 
@@ -37,38 +37,59 @@ public class PlayerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.S)) {
-			isBottomBtnClick = true;
-		}
+		//handle bottom (S) button
+		HandleSBtn ();
 
-		if (Input.GetKeyUp (KeyCode.S)) {
-			isBottomBtnClick = false; 
-		}
-
-		float h = Input.GetAxis ("Horizontal");
-		Vector3 v = myRigidBody.velocity;
-		myRigidBody.velocity = new Vector3 (h * speed, v.y, v.z);
-		v = myRigidBody.velocity;
+		//handle Left (A) and Right (D) button
+		Vector3 v = HandleHorizontalBtn ();
 
 		//Ray for knowing player is ground or not
-		RaycastHit hitInfo;
-		isGround = Physics.Raycast (transform.position + Vector3.up * 0.1f, Vector3.up, out hitInfo,2.8f,groundLayerMask);
-		//get PalyerState
-		if (!isGround) {
-			playerState = PlayerState.PlayerJump;
-		} else {
-			if(isBottomBtnClick){
-				playerState = PlayerState.PlayerDown;
-			}else{
-				playerState = PlayerState.PlayerGround; 
-			}
-		}
+		bool playerIsGround = PlayerIsGround ();
+
+		//set PalyerState
+		SetPlayerState (playerIsGround,isBottomBtnClick);
 
 		//Press K to Jump
-		if (isGround && Input.GetKeyDown (KeyCode.K)) {
+		if(playerIsGround)
+			HandleJump (v);
+		//change active gameobject by playerstate
+		ChangeActiveGameObjectByPlayerState (playerState);
+		//player direction
+		SetPlayerDirection ();
+		//change player idle or walk
+		if (Mathf.Abs (myRigidBody.velocity.x) > 0.05f) {
+			playerGround.status = AnimStatus.Walk;
+			playerDown.status = AnimStatus.Walk;
+		} else {
+			playerGround.status = AnimStatus.Idel;
+			playerDown.status = AnimStatus.Idel;
+		}
+	}
+
+	/// <summary>
+	/// Handles the jump.
+	/// </summary>
+	/// <param name="v">V.</param>
+	private void HandleJump(Vector3 v){
+		if (Input.GetKeyDown (KeyCode.K)) {
 			myRigidBody.velocity = new Vector3(v.x,jumpSpeed,v.z);
 		}
+	}
 
+	/// <summary>
+	/// Players the is ground.
+	/// </summary>
+	/// <returns><c>true</c>, if is ground was playered, <c>false</c> otherwise.</returns>
+	private bool PlayerIsGround(){
+		RaycastHit hitInfo;
+		return Physics.Raycast (transform.position + Vector3.up * 0.1f, Vector3.up, out hitInfo,2.8f,groundLayerMask);
+	}
+
+	/// <summary>
+	/// Changes the state of the active game object by player.
+	/// </summary>
+	/// <param name="playerState">Player state.</param>
+	private void ChangeActiveGameObjectByPlayerState(PlayerState playerState){
 		switch (playerState) {
 		case PlayerState.PlayerDown:
 			playerDown.gameObject.SetActive(true);
@@ -86,11 +107,57 @@ public class PlayerMove : MonoBehaviour {
 			playerJump.gameObject.SetActive(true);
 			break;
 		}
-		//player direction
+	}
+
+	/// <summary>
+	/// Handles the S button.
+	/// </summary>
+	private void HandleSBtn(){
+		if (Input.GetKeyDown (KeyCode.S)) {
+			isBottomBtnClick = true;
+		}
+		
+		if (Input.GetKeyUp (KeyCode.S)) {
+			isBottomBtnClick = false; 
+		}
+	}
+
+	/// <summary>
+	/// Handles the horizontal button.
+	/// </summary>
+	private Vector3 HandleHorizontalBtn(){
+		float h = Input.GetAxis ("Horizontal");
+		Vector3 v = myRigidBody.velocity;
+		myRigidBody.velocity = new Vector3 (h * speed, v.y, v.z);
+		v = myRigidBody.velocity;
+		return v;
+	}
+
+	/// <summary>
+	/// Sets the state of the player.
+	/// </summary>
+	/// <param name="isGround">true for player is stand ground</param>
+	/// <param name="isBottomBtnClick">true for bottom button down.</param>
+	private void SetPlayerState(bool isGround,bool isBottomBtnClick){
+		if (isGround) {
+			if (isBottomBtnClick) {
+				playerState = PlayerState.PlayerDown;
+			} else {
+				playerState = PlayerState.PlayerGround; 
+			}
+		} else {
+			playerState = PlayerState.PlayerJump;
+		}
+	}
+
+	/// <summary>
+	/// Sets the player direction.
+	/// </summary>
+	private void SetPlayerDirection(){
 		float x = 1;
 		if (myRigidBody.velocity.x > 0.05f) {
 			x = -1;
-		} else if (myRigidBody.velocity.x < 0.05f) {
+		} else if (myRigidBody.velocity.x < -0.05f) {
 			x = 1;
 		} else {
 			x = 0;
@@ -100,13 +167,6 @@ public class PlayerMove : MonoBehaviour {
 			playerDown.transform.localScale = new Vector3(x,1,1);
 			playerJump.transform.localScale = new Vector3(x,1,1);
 		}
-		//change player's state
-		if (Mathf.Abs (myRigidBody.velocity.x) > 0.05f) {
-			playerGround.status = AnimStatus.Walk;
-			playerDown.status = AnimStatus.Walk;
-		} else {
-			playerGround.status = AnimStatus.Idel;
-			playerDown.status = AnimStatus.Idel;
-		}
 	}
+
 }

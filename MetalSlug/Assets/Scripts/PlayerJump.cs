@@ -82,36 +82,36 @@ public class PlayerJump : MonoBehaviour {
 	void LateUpdate(){
 		if (shoot) {
 			shoot = false;
-			return;
+			//Shoot Bullet
+			Vector3 pos = Vector3.zero;
+			if (shootDir == ShootDir.Top) {
+				pos = shootUpPos.position;
+			} else if (shootDir == ShootDir.Left || shootDir == ShootDir.Right) {
+				pos = shootHorizontalPos.position;
+			}
+			print ("*********" + shootDir);
+			int z_rotation = 0;
+			switch (shootDir) {
+			case ShootDir.Left:
+				z_rotation = 180;
+				upRenderer.sprite = shootHorizontalSprite;
+				break;
+			case ShootDir.Right:
+				z_rotation = 0;
+				upRenderer.sprite = shootHorizontalSprite;
+				break;
+			case ShootDir.Top:
+				z_rotation = 90;
+				upRenderer.sprite = shootUpSprite;
+				break;
+			case ShootDir.Down:
+				z_rotation = 270;
+				break;
+			default:
+				break;
+			}
+			GameObject.Instantiate (projectilePrefab, pos, Quaternion.Euler (0, 0, z_rotation));
 		}
-		//Shoot Bullet
-		Vector3 pos = Vector3.zero;
-		if (shootDir == ShootDir.Top) {
-			pos = shootUpPos.position;
-		} else if (shootDir == ShootDir.Left || shootDir == ShootDir.Right) {
-			pos = shootHorizontalPos.position;
-		}
-		int z_rotation = 0;
-		switch (shootDir) {
-		case ShootDir.Left:
-			z_rotation = 180;
-			upRenderer.sprite = shootHorizontalSprite;
-			break;
-		case ShootDir.Right:
-			z_rotation = 0;
-			upRenderer.sprite = shootHorizontalSprite;
-			break;
-		case ShootDir.Top:
-			z_rotation = 90;
-			upRenderer.sprite = shootUpSprite;
-			break;
-		case ShootDir.Down:
-			z_rotation = 270;
-			break;
-		default:
-			break;
-		}
-		GameObject.Instantiate (projectilePrefab, pos, Quaternion.Euler (0, 0, z_rotation));
 	}
 
 	public void Shoot(bool isTopKeyDown,bool isBottomKeyDown){
@@ -119,6 +119,7 @@ public class PlayerJump : MonoBehaviour {
 		//Get Shoot Direction
 		if (!isTopKeyDown && !isBottomKeyDown) {
 			shootDir = transform.localScale.x == 1 ? ShootDir.Left : ShootDir.Right;
+			print("%%%%%"+shootDir);
 		} else if (isTopKeyDown) {
 			shootDir = ShootDir.Top;
 		} else {

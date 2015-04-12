@@ -31,9 +31,6 @@ public class PlayerShooter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		shootTimeInterval = 1.0f / shootRate;
-		playerDown = this.GetComponent<PlayerDown> ();
-		playerJump = this.GetComponent<PlayerJump> ();
-		playerGround = this.GetComponent<PlayerGround> ();
 		playerMove = this.GetComponent<PlayerMove> ();
 	}
 	
@@ -67,10 +64,10 @@ public class PlayerShooter : MonoBehaviour {
 			this.GetComponent<AudioSource>().Play();
 			switch(playerMove.playerState){
 			case PlayerState.PlayerGround:
-				playerGround.Shoot(isTopKeyDown,isBottomKeyDown);
+				//playerGround.Shoot(isTopKeyDown,isBottomKeyDown);
 				break;
 			case PlayerState.PlayerDown:
-				playerDown.Shoot(isTopKeyDown,isBottomKeyDown);
+				//playerDown.Shoot(isTopKeyDown,isBottomKeyDown);
 				break;
 			case PlayerState.PlayerJump:
 				playerJump.Shoot(isTopKeyDown,isBottomKeyDown);
