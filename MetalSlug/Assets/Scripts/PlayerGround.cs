@@ -98,7 +98,7 @@ public class PlayerGround : MonoBehaviour {
 	/// </summary>
 	private float walkDownTimer = 0;
 
-	public void Shoot(float v_h,bool isTopKeyDown,bool isBottomKeyDown){
+	public void Shoot(bool isTopKeyDown,bool isBottomKeyDown){
 		
 	}
 

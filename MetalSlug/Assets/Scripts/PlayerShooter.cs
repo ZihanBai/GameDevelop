@@ -66,13 +66,13 @@ public class PlayerShooter : MonoBehaviour {
 		if (canShoot && Input.GetKeyDown (KeyCode.J)) {
 			switch(playerMove.playerState){
 			case PlayerState.PlayerGround:
-				playerGround.Shoot(playerMove.myRigidBody.velocity.x,isTopKeyDown,isBottomKeyDown);
+				playerGround.Shoot(isTopKeyDown,isBottomKeyDown);
 				break;
 			case PlayerState.PlayerDown:
-				playerDown.Shoot(playerMove.myRigidBody.velocity.x,isTopKeyDown,isBottomKeyDown);
+				playerDown.Shoot(isTopKeyDown,isBottomKeyDown);
 				break;
 			case PlayerState.PlayerJump:
-				playerJump.Shoot(playerMove.myRigidBody.velocity.x,isTopKeyDown,isBottomKeyDown);
+				playerJump.Shoot(isTopKeyDown,isBottomKeyDown);
 				break;
 			}
 		}

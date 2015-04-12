@@ -75,14 +75,45 @@ public class PlayerJump : MonoBehaviour {
 
 	private ShootDir shootDir;
 
+	public GameObject projectilePrefab;
+	public Transform shootUpPos;
+	public Transform shootHorizontalPos;
+
 	void LateUpdate(){
 		if (shoot) {
 			shoot = false;
 		}
-		//Shoot
+		//Shoot Bullet
+		Vector3 pos = Vector3.zero;
+		if (shootDir == ShootDir.Top) {
+			pos = shootUpPos.position;
+		} else if (shootDir == ShootDir.Left || shootDir == ShootDir.Right) {
+			pos = shootHorizontalPos.position;
+		}
+		int z_rotation = 0;
+		switch (shootDir) {
+		case ShootDir.Left:
+			z_rotation = 180;
+			upRenderer.sprite = shootHorizontalSprite;
+			break;
+		case ShootDir.Right:
+			z_rotation = 0;
+			upRenderer.sprite = shootHorizontalSprite;
+			break;
+		case ShootDir.Top:
+			z_rotation = 90;
+			upRenderer.sprite = shootUpSprite;
+			break;
+		case ShootDir.Down:
+			z_rotation = 270;
+			break;
+		default:
+			break;
+		}
+		GameObject.Instantiate (projectilePrefab, pos, Quaternion.Euler (0, 0, z_rotation));
 	}
 
-	public void Shoot(float v_h,bool isTopKeyDown,bool isBottomKeyDown){
+	public void Shoot(bool isTopKeyDown,bool isBottomKeyDown){
 		shoot = true;
 		//Get Shoot Direction
 		if (!isTopKeyDown && !isBottomKeyDown) {
