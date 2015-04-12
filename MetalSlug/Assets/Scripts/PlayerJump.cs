@@ -82,6 +82,7 @@ public class PlayerJump : MonoBehaviour {
 	void LateUpdate(){
 		if (shoot) {
 			shoot = false;
+			return;
 		}
 		//Shoot Bullet
 		Vector3 pos = Vector3.zero;

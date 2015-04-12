@@ -64,6 +64,7 @@ public class PlayerShooter : MonoBehaviour {
 		}
 
 		if (canShoot && Input.GetKeyDown (KeyCode.J)) {
+			this.GetComponent<AudioSource>().Play();
 			switch(playerMove.playerState){
 			case PlayerState.PlayerGround:
 				playerGround.Shoot(isTopKeyDown,isBottomKeyDown);
