@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour {
 
 	private int groundLayerMask;
 
-	private Rigidbody myRigidBody;
+	public Rigidbody myRigidBody;
 
 	private bool isBottomBtnClick = false;
 

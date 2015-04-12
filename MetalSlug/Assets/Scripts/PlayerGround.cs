@@ -98,6 +98,10 @@ public class PlayerGround : MonoBehaviour {
 	/// </summary>
 	private float walkDownTimer = 0;
 
+	public void Shoot(float v_h,bool isTopKeyDown,bool isBottomKeyDown){
+		
+	}
+
 	// Use this for initialization
 	void Start () {
 		//time interval per frame

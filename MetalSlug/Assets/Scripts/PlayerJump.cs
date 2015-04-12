@@ -33,6 +33,9 @@ public class PlayerJump : MonoBehaviour {
 	/// </summary>
 	public Sprite[] idleDownSpriteArray;
 
+	public Sprite shootUpSprite;
+	public Sprite shootHorizontalSprite;
+
 	/// <summary>
 	/// The index of the idle down.
 	/// </summary>
@@ -67,6 +70,29 @@ public class PlayerJump : MonoBehaviour {
 	/// The idle up timer.
 	/// </summary>
 	private float idleUpTimer = 0;
+
+	private bool shoot = false;
+
+	private ShootDir shootDir;
+
+	void LateUpdate(){
+		if (shoot) {
+			shoot = false;
+		}
+		//Shoot
+	}
+
+	public void Shoot(float v_h,bool isTopKeyDown,bool isBottomKeyDown){
+		shoot = true;
+		//Get Shoot Direction
+		if (!isTopKeyDown && !isBottomKeyDown) {
+			shootDir = transform.localScale.x == 1 ? ShootDir.Left : ShootDir.Right;
+		} else if (isTopKeyDown) {
+			shootDir = ShootDir.Top;
+		} else {
+			shootDir = ShootDir.Down;
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
