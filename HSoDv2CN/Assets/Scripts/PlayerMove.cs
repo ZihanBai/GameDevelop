@@ -31,6 +31,7 @@ public class PlayerMove : MonoBehaviour {
 		HandleVerticalBtn (vInput);
 		ChangePlayerState (hInput,vInput);
 		ChangePlayerSpriteByState ();
+		SetPlayerDirection ();
 	}
 
 	private void ChangePlayerState(float hInput,float vInput){
@@ -81,6 +82,23 @@ public class PlayerMove : MonoBehaviour {
 			break;
 		default:
 			break;
+		}
+	}
+
+	/// <summary>
+	/// Sets the player direction.
+	/// </summary>
+	private void SetPlayerDirection(){
+		float x = 0.8f;
+		if (myRigidBody.velocity.x > 0.05f) {
+			x = 0.8f;
+		} else if (myRigidBody.velocity.x < -0.05f) {
+			x = -0.8f;
+		} else {
+			x = 0;
+		}
+		if (x != 0) {
+			transform.localScale = new Vector3(x,0.8f,0.8f);
 		}
 	}
 }

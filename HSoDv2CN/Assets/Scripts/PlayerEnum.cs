@@ -7,6 +7,11 @@ public enum PlayerState{
 	Shooting
 }
 
+public enum PlayerArm{
+	Up,
+	Down
+}
+
 public class PlayerEnum {
 	
 }
