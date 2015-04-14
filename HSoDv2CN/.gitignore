@@ -3,3 +3,4 @@ Library
 *.meta
 *csproj
 *.sln
+*.swp
