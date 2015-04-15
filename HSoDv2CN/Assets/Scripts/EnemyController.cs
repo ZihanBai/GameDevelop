@@ -39,15 +39,17 @@ public class EnemyController : MonoBehaviour {
 		if (this.hp <= 0) {
 			Dead();
 		}
-		Vector3 distance = player.gameObject.transform.position - transform.position;
+		Vector3 targetPositon = player.gameObject.transform.position;
+		Vector3 distance = targetPositon - transform.position;
 		if (enemyState != EnemyState.Die) {
-			if (Mathf.Abs (distance.magnitude) > 7f) {
+			if (Mathf.Abs (distance.magnitude) > 5f) {
 				enemyState = EnemyState.Walk;
-			}else{
+				transform.position = Vector3.Lerp(transform.position,targetPositon,1f*Time.deltaTime);
+			}else if(Mathf.Abs (distance.magnitude) < 5f){
 				enemyState = EnemyState.Attack;
 			}
 		}
-
+//		print ("*******" + enemyState);
 		ChangeEnemySpriteByState ();
 	}
 

@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
 	/// </summary>
 	private void HandleHorizontalBtn(float h){
 		Vector3 r = myRigidBody.velocity;
-		myRigidBody.velocity = new Vector3 (h * speed, r.y, r.z);
+		myRigidBody.velocity = new Vector3 (h * speed, r.y, 0f);
 	}
 	
 	/// <summary>
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 	/// </summary>
 	private void HandleVerticalBtn(float v){
 		Vector3 r = myRigidBody.velocity;
-		myRigidBody.velocity = new Vector3 (r.x, v * speed, r.z);
+		myRigidBody.velocity = new Vector3 (r.x, v * speed, 0f);
 	}
 	
 	/// <summary>

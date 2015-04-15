@@ -44,15 +44,14 @@ public class Shoot : MonoBehaviour {
 		Ray ray = new Ray (startPositon, targetPosition);
 		RaycastHit hitInfo;
 		if (Physics.Raycast (ray, out hitInfo)) {
-			gunLine.SetPosition (1, hitInfo.point+new Vector3(0,0,-1));
-			print(hitInfo.point);
+			gunLine.SetPosition (1, hitInfo.point);
+			print("hitInfo.point:" + hitInfo.point);
 			//if shoot enemy
 			if(hitInfo.collider.tag == "Enemy"){
 				hitInfo.collider.GetComponent<EnemyController>().TakeDamage(attack);
 			}
 		} else {
 			gunLine.SetPosition(1,targetPosition);
-
 		}
 		Invoke("ClearEffect",0.05f);
 	}
