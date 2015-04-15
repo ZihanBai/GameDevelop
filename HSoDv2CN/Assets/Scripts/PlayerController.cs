@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMove : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	public PlayerState playerState = PlayerState.Idel;
-
-	public LeftHandController leftHand;
-
+	
+	public PlayerIdle playerIdle;
+	
+	public PlayerWalk playerWalk;
+	
 	public float speed = 5f;
-
+	
 	public bool isShooting = false;
-
+	
 	private Rigidbody myRigidBody;
-
-
 
 	// Use this for initialization
 	void Start () {
@@ -33,37 +33,35 @@ public class PlayerMove : MonoBehaviour {
 		ChangePlayerSpriteByState ();
 		SetPlayerDirection ();
 	}
-
+	
 	private void ChangePlayerState(float hInput,float vInput){
-		if (isShooting) {
-			playerState = PlayerState.Shooting;
-			return;
-		}
 		if (Mathf.Abs (hInput) > 0.05f || Mathf.Abs (vInput) > 0.05f) {
 			playerState = PlayerState.Walk;
+			if(Input.GetKeyDown(KeyCode.K)){
+
+			}
 		} else {
-			playerState = PlayerState.Idel;
+			if(Input.GetKeyDown(KeyCode.K)){
+				playerState = PlayerState.StandShoot;
+			}else
+				playerState = PlayerState.Idel;
 		}
 	}
-
+	
 	/// <summary>
 	/// Handles the horizontal button.
 	/// </summary>
 	private void HandleHorizontalBtn(float h){
 		Vector3 r = myRigidBody.velocity;
 		myRigidBody.velocity = new Vector3 (h * speed, r.y, r.z);
-		if (Mathf.Abs (h) > 0f)
-			playerState = PlayerState.Walk;
 	}
-
+	
 	/// <summary>
 	/// Handles the vertical button.
 	/// </summary>
 	private void HandleVerticalBtn(float v){
 		Vector3 r = myRigidBody.velocity;
 		myRigidBody.velocity = new Vector3 (r.x, v * speed, r.z);
-		if (Mathf.Abs (v) > 0.05f)
-			playerState = PlayerState.Walk;
 	}
 	
 	/// <summary>
@@ -72,19 +70,18 @@ public class PlayerMove : MonoBehaviour {
 	private void ChangePlayerSpriteByState(){
 		switch (playerState) {
 		case PlayerState.Idel:
-			leftHand.DownForIdle();
+			playerIdle.gameObject.SetActive(true);
+			playerWalk.gameObject.SetActive(false);
 			break;
 		case PlayerState.Walk:
-			leftHand.UpForShoot();
-			break;
-		case PlayerState.Shooting:
-			leftHand.UpForShoot();
+			playerIdle.gameObject.SetActive(false);
+			playerWalk.gameObject.SetActive(true);
 			break;
 		default:
 			break;
 		}
 	}
-
+	
 	/// <summary>
 	/// Sets the player direction.
 	/// </summary>

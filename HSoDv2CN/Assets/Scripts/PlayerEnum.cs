@@ -4,12 +4,7 @@ using System.Collections;
 public enum PlayerState{
 	Idel,
 	Walk,
-	Shooting
-}
-
-public enum PlayerArm{
-	Up,
-	Down
+	StandShoot
 }
 
 public class PlayerEnum {
