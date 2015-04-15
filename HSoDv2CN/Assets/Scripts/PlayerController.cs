@@ -37,14 +37,8 @@ public class PlayerController : MonoBehaviour {
 	private void ChangePlayerState(float hInput,float vInput){
 		if (Mathf.Abs (hInput) > 0.05f || Mathf.Abs (vInput) > 0.05f) {
 			playerState = PlayerState.Walk;
-			if(Input.GetKeyDown(KeyCode.K)){
-
-			}
 		} else {
-			if(Input.GetKeyDown(KeyCode.K)){
-				playerState = PlayerState.StandShoot;
-			}else
-				playerState = PlayerState.Idel;
+			playerState = PlayerState.Idel;
 		}
 	}
 	

@@ -3,8 +3,7 @@ using System.Collections;
 
 public enum PlayerState{
 	Idel,
-	Walk,
-	StandShoot
+	Walk
 }
 
 public class PlayerEnum {

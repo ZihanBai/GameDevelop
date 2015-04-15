@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour {
 	/// Raises the screen tap event.
 	/// </summary>
 	public void OnScreenTap(){
-		print("test");
 		Application.LoadLevel (1);
 	}
 }
