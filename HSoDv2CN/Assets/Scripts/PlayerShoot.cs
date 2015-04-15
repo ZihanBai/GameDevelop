@@ -46,10 +46,10 @@ public class PlayerShoot : MonoBehaviour {
 			this.GetComponent<AudioSource>().Play();
 			switch(playerController.playerState){
 				case PlayerState.Idel:
-					playerIdle.Shoot();
+					playerIdle.Shoot(transform.localScale.x);
 					break;
 				case PlayerState.Walk:
-					playerWalk.Shoot();
+					playerWalk.Shoot(transform.localScale.x);
 					break;
 			}
 		}

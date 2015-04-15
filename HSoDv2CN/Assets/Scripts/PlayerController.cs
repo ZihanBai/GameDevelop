@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour {
 			x = 0;
 		}
 		if (x != 0) {
-			transform.localScale = new Vector3(x,0.8f,0.8f);
+			transform.localScale = new Vector3(x,0.8f,0f);
 		}
 	}
 }

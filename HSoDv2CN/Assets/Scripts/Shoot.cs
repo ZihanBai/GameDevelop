@@ -13,11 +13,6 @@ public class Shoot : MonoBehaviour {
 	/// </summary>
 	public float attack = 30f;
 	
-	/// <summary>
-	/// The timer.
-	/// </summary>
-	private float timer = 0f;
-	
 	private LineRenderer gunLine;
 
 	// Use this for initialization
@@ -34,21 +29,30 @@ public class Shoot : MonoBehaviour {
 //		}
 	}
 
-	public void GunShoot(){
-//		print ("GunShoot");
+	public void GunShoot(float direction){
 		gunLine.enabled = true;
-		gunLine.SetPosition (0,transform.position + new Vector3(0,0,-1));
-		Ray ray = new Ray (transform.position, transform.position + new Vector3(100,0,0));
+		Vector3 startPositon = transform.position + new Vector3 (0, 0, -1);
+		Vector3 targetPosition = transform.position;
+		if(direction >= 0.8)
+			targetPosition += new Vector3 (100, 0, -1);
+		else
+			targetPosition += new Vector3 (-100, 0, -1);
+		print ("startPositon:" + startPositon);
+		print ("targetPosition" + targetPosition);
+		gunLine.SetPosition (0,startPositon);
+
+		Ray ray = new Ray (startPositon, targetPosition);
 		RaycastHit hitInfo;
 		if (Physics.Raycast (ray, out hitInfo)) {
 			gunLine.SetPosition (1, hitInfo.point+new Vector3(0,0,-1));
+			print(hitInfo.point);
 			//if shoot enemy
 			if(hitInfo.collider.tag == "Enemy"){
-				print("Shoot Enemy");
-				//hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(attack,hitInfo.point);
+				hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(attack);
 			}
 		} else {
-			gunLine.SetPosition(1,transform.position + (transform.forward + new Vector3(0,0,-1))*100);
+			gunLine.SetPosition(1,targetPosition);
+
 		}
 		Invoke("ClearEffect",0.05f);
 	}

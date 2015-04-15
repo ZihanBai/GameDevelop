@@ -5,7 +5,7 @@ public class PlayerIdle : MonoBehaviour {
 
 	public Shoot shoot;
 
-	public void Shoot(){
-		shoot.GunShoot ();
+	public void Shoot(float direction){
+		shoot.GunShoot (direction);
 	}
 }

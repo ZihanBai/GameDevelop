@@ -1,12 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerIdle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Shoot.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerIdle.cs" Line="15" Column="16" />
-      <File FileName="Assets/Scripts/EnemyIdle.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerShoot.cs" Line="52" Column="24" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerWalk.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Shoot.cs" Line="44" Column="50" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="92" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -47,7 +47,7 @@ public class EnemyDie : MonoBehaviour {
 		if(dieTimer > animTimeInterval){
 			dieTimer -= animTimeInterval;
 			dieIndex++;
-			if(dieIndex == dieLength){
+			if(dieIndex == dieLength - 1){
 				Destroy(this.gameObject);
 				return;
 			}
