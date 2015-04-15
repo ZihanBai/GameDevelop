@@ -6,6 +6,13 @@ public enum PlayerState{
 	Walk
 }
 
+public enum EnemyState{
+	Idel,
+	Walk,
+	Attack,
+	Die
+}
+
 public class PlayerEnum {
 	
 }

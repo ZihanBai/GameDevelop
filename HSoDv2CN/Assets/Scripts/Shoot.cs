@@ -48,7 +48,7 @@ public class Shoot : MonoBehaviour {
 			print(hitInfo.point);
 			//if shoot enemy
 			if(hitInfo.collider.tag == "Enemy"){
-				hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(attack);
+				hitInfo.collider.GetComponent<EnemyController>().TakeDamage(attack);
 			}
 		} else {
 			gunLine.SetPosition(1,targetPosition);
