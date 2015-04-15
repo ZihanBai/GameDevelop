@@ -13,6 +13,10 @@ public class PlayerShoot : MonoBehaviour {
 
 	private PlayerController playerController;
 
+	public PlayerIdle playerIdle;
+
+	public PlayerWalk playerWalk;
+
 	// Use this for initialization
 	void Start () {
 		shootTimeInterval = 1.0f / shootRate;
@@ -41,12 +45,12 @@ public class PlayerShoot : MonoBehaviour {
 		if (canShoot && Input.GetKeyDown (KeyCode.K)) {
 			this.GetComponent<AudioSource>().Play();
 			switch(playerController.playerState){
-			case PlayerState.Idel:
-				//playerIdel.Shoot(isTopKeyDown,isBottomKeyDown);
-				break;
-			case PlayerState.Walk:
-				//playerDown.Shoot(isTopKeyDown,isBottomKeyDown);
-				break;
+				case PlayerState.Idel:
+					playerIdle.Shoot();
+					break;
+				case PlayerState.Walk:
+					playerWalk.Shoot();
+					break;
 			}
 		}
 	}

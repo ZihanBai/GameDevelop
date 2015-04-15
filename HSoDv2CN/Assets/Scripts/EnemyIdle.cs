@@ -18,7 +18,7 @@ public class EnemyIdle : MonoBehaviour {
 	/// <summary>
 	/// Up renderer.
 	/// </summary>
-	public SpriteRenderer renderer;
+	public SpriteRenderer idleRenderer;
 
 	/// <summary>
 	/// The idle up sprite array.
@@ -48,7 +48,7 @@ public class EnemyIdle : MonoBehaviour {
 			idleTimer -= animTimeInterval;
 			idleIndex++;
 			idleIndex %= idleLength;
-			renderer.sprite = idleSpriteArray[idleIndex];
+			idleRenderer.sprite = idleSpriteArray[idleIndex];
 		}
 	}
 }
