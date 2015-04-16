@@ -18,10 +18,10 @@ public class EnemyController : MonoBehaviour {
 
 	public EnemyDie enemyDie;
 
-	public PlayerController player;
-
 	public float attack = 0f;
 	
+	private PlayerController player;
+
 	/// <summary>
 	/// The hurt audio.
 	/// </summary>
@@ -37,6 +37,10 @@ public class EnemyController : MonoBehaviour {
 		attackInterval = 1 / attackRate;
 		attack = 5f;
 		hurtAudio = this.GetComponent<AudioSource> ();
+	}
+
+	void Start(){
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerController>();
 	}
 
 	// Update is called once per frame
