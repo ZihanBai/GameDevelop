@@ -3,11 +3,11 @@
 这里是我本人在学习游戏开发的过程中或跟随教程或自制的一些小游戏。目前包括5个小游戏:
 
 ## 目录
-* [FlappyBird](#FlappyBird)
-* [DontTap（别踩白块儿）](#DontTap（别踩白块儿）)
-* [MetalSlug（合金弹头）](#MetalSlug（合金弹头）)
-* [NightmareShooter](#NightmareShooter)
-* [HSoDv2CN](#HSoDv2CN)
+* [FlappyBird](##FlappyBird)
+* [DontTap（别踩白块儿）](##DontTap（别踩白块儿）)
+* [MetalSlug（合金弹头）](##MetalSlug（合金弹头）)
+* [NightmareShooter](##NightmareShooter)
+* [HSoDv2CN](##HSoDv2CN)
 
 PS：从使用引擎的比例可以看出我现在专心搞Unity3D了。至于cocos2d-x的话，我可能更多的会学习它的组织架构了而不是用来做游戏。
 
