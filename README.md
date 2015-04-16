@@ -3,13 +3,15 @@
 这里是我本人在学习游戏开发的过程中或跟随教程或自制的一些小游戏。目前包括5个小游戏:
 
 ## 目录
-* [FlappyBird](##FlappyBird)
-* [DontTap（别踩白块儿）](##DontTap（别踩白块儿）)
-* [MetalSlug（合金弹头）](##MetalSlug（合金弹头）)
-* [NightmareShooter](##NightmareShooter)
-* [HSoDv2CN](##HSoDv2CN)
+* [FlappyBird](#FlappyBird)
+* [DontTap（别踩白块儿）](#DontTap)
+* [MetalSlug（合金弹头）](#MetalSlug)
+* [NightmareShooter](#NightmareShooter)
+* [HSoDv2CN](#HSoDv2CN)
 
 PS：从使用引擎的比例可以看出我现在专心搞Unity3D了。至于cocos2d-x的话，我可能更多的会学习它的组织架构了而不是用来做游戏。
+
+<div id="FlappyBird"></div>
 
 ##FlappyBird
 
@@ -23,6 +25,8 @@ PS：从使用引擎的比例可以看出我现在专心搞Unity3D了。至于co
 
 <img src="https://github.com/ZihanBai/GameDevelop/blob/master/FlappyBird/Resources/image/Screen%20Shot2.png?raw=true" width="200" alt="FlappyBird">
 
+<div id="DontTap"></div>
+
 ##DontTap（别踩白块儿）
 
 这是使用Unity3D制作的一个仿别踩白块儿的手机游戏。
@@ -34,6 +38,8 @@ PS：从使用引擎的比例可以看出我现在专心搞Unity3D了。至于co
 游戏界面：
 
 <img src="https://github.com/ZihanBai/GameDevelop/blob/master/DontTap/ScreenShot/ScreenShot2.png?raw=true" width="200" alt="DontTap（别踩白块儿）">
+
+<div id="MetalSlug"></div>
 
 ##MetalSlug（合金弹头）
 
@@ -47,12 +53,16 @@ PS：从使用引擎的比例可以看出我现在专心搞Unity3D了。至于co
 
 <img src="https://github.com/ZihanBai/GameDevelop/blob/master/MetalSlug/ScreenShot/ScreenShot2.png?raw=true" width="400" alt="MetalSlug（合金弹头）">
 
+<div id="NightmareShooter"></div>
+
 ##NightmareShooter
 来自Unity官方教程SurvivalShooter的3D游戏demo，已实现所有功能。
 
 游戏界面：
 
 <img src="https://github.com/ZihanBai/GameDevelop/blob/master/NightmareShooter/ScreenShot/ScreenShot.png?raw=true" width="400" alt="NightmareShooter">
+
+<div id="HSoDv2CN"></div>
 
 ##HSoDv2CN
 利用崩坏学园2及合金弹头的素材自制的2D小游戏，已完成基本功能。
