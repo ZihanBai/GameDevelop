@@ -22,11 +22,6 @@ public class Shoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		timer += Time.deltaTime;
-//		if (timer > 1 / shootRate) {		//1 / shootRate is time cycle
-//			timer -= 1 / shootRate;
-//			GunShoot();
-//		}
 	}
 
 	public void GunShoot(float direction){

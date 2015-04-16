@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 	public PlayerIdle playerIdle;
 	
 	public PlayerWalk playerWalk;
+
+	public AudioClip hurtAudio;
 	
 	public float speed = 5f;
 	
@@ -16,8 +18,6 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody myRigidBody;
 
 	private float hp = 100f;
-
-	public AudioClip hurtAudio;
 
 	private bool dead = false;
 
@@ -42,9 +42,17 @@ public class PlayerController : MonoBehaviour {
 		SetPlayerDirection ();
 	}
 
+	void OnGUI(){
+		if (dead) {
+			GUI.Box(new Rect(100,100,100,90), "You Die!");
+			if(GUI.Button(new Rect(120,140,80,20), "Rerty")) {
+				Application.LoadLevel(0);
+			}
+		}
+	}
+
 	private void Dead(){
 		dead = true;
-
 	}
 
 	public void TakeDamage(float damage){

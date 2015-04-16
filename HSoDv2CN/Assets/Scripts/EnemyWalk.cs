@@ -7,31 +7,34 @@ public class EnemyWalk : MonoBehaviour {
 	/// The animation speed.
 	/// </summary>
 	public float animSpeed = 10f;
+
+	/// <summary>
+	/// The walk renderer.
+	/// </summary>
+	public SpriteRenderer walkRenderer;
 	
+	/// <summary>
+	/// The walk sprite array.
+	/// </summary>
+	public Sprite[] walkSpriteArray;
+
+	/// <summary>
+	/// The walk timer.
+	/// </summary>
 	private float walkTimer = 0f;
 	
 	/// <summary>
 	/// The animation time interval.
 	/// </summary>
 	private float animTimeInterval = 0;
-	
+
 	/// <summary>
-	/// Up renderer.
-	/// </summary>
-	public SpriteRenderer walkRenderer;
-	
-	/// <summary>
-	/// The idle up sprite array.
-	/// </summary>
-	public Sprite[] walkSpriteArray;
-	
-	/// <summary>
-	/// The index of the idle up.
+	/// The index of the walk.
 	/// </summary>
 	private int walkIndex = 0;
 	
 	/// <summary>
-	/// The length of the idle up.
+	/// The length of the walk.
 	/// </summary>
 	private int walkLength = 0;
 	

@@ -20,11 +20,8 @@ public class EnemyController : MonoBehaviour {
 
 	public PlayerController player;
 
-	/// <summary>
-	/// The death audio.
-	/// </summary>
-	public AudioClip deathAudio;
-
+	public float attack = 0f;
+	
 	/// <summary>
 	/// The hurt audio.
 	/// </summary>
@@ -38,6 +35,7 @@ public class EnemyController : MonoBehaviour {
 
 	void Awake(){
 		attackInterval = 1 / attackRate;
+		attack = 5f;
 		hurtAudio = this.GetComponent<AudioSource> ();
 	}
 
@@ -49,23 +47,16 @@ public class EnemyController : MonoBehaviour {
 		Vector3 targetPositon = player.gameObject.transform.position;
 		Vector3 distance = targetPositon - transform.position;
 		if (enemyState != EnemyState.Die) {
-			if (Mathf.Abs (distance.magnitude) > 5f) {
+			if (Mathf.Abs (distance.magnitude) > 7f) {
 				enemyState = EnemyState.Walk;
-			}else if(Mathf.Abs (distance.magnitude) < 5f){
+				transform.position = Vector3.Lerp(transform.position,targetPositon,0.5f*Time.deltaTime);
+			}else if(Mathf.Abs (distance.magnitude) < 7f){
 				enemyState = EnemyState.Attack;
-				attackTimer += Time.deltaTime;
-				if(attackTimer > attackInterval){
-					attackTimer -= attackInterval;
-					player.TakeDamage(5f);
-				}
+				Attack(attack);
 			}
 		}
 //		print ("*******" + enemyState);
 		ChangeEnemySpriteByState ();
-	}
-
-	private void DestroyEnemy(){
-		Destroy (this.gameObject);
 	}
 
 	public void TakeDamage(float damage){
@@ -78,11 +69,22 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 
+	private void Attack(float attack){
+		attackTimer += Time.deltaTime;
+		if(attackTimer > attackInterval){
+			attackTimer -= attackInterval;
+			player.TakeDamage(attack);
+		}
+	}
+
+	private void DestroyEnemy(){
+		Destroy (this.gameObject);
+	}
+
 	/// <summary>
 	/// Enemy Dead.
 	/// </summary>
 	private void Dead(){
-		AudioSource.PlayClipAtPoint (deathAudio, transform.position, 0.5f);
 		enemyState = EnemyState.Die;
 		Invoke ("DestroyEnemy", 1.5f);
 	}

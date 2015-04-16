@@ -24,7 +24,12 @@ public class EnemyDie : MonoBehaviour {
 	/// The idle up sprite array.
 	/// </summary>
 	public Sprite[] dieSpriteArray;
-	
+
+	/// <summary>
+	/// The death audio.
+	/// </summary>
+	public AudioClip deathAudio;
+
 	/// <summary>
 	/// The index of the idle up.
 	/// </summary>
@@ -39,6 +44,7 @@ public class EnemyDie : MonoBehaviour {
 	void Start () {
 		animTimeInterval = 1 / animSpeed;
 		dieLength = dieSpriteArray.Length;
+		AudioSource.PlayClipAtPoint (deathAudio, transform.position, 0.5f);
 	}
 	
 	// Update is called once per frame
