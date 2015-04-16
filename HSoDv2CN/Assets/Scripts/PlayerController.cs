@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour {
 	
 	private Rigidbody myRigidBody;
 
+	private float hp = 100f;
+
+	public AudioClip hurtAudio;
+
+	private bool dead = false;
+
 	// Use this for initialization
 	void Start () {
 		myRigidBody = this.GetComponent<Rigidbody> ();
@@ -23,6 +29,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (hp <= 0)
+			Dead ();
 		//get input
 		float hInput = Input.GetAxis ("Horizontal");
 		float vInput = Input.GetAxis ("Vertical");
@@ -33,7 +41,18 @@ public class PlayerController : MonoBehaviour {
 		ChangePlayerSpriteByState ();
 		SetPlayerDirection ();
 	}
-	
+
+	private void Dead(){
+		dead = true;
+
+	}
+
+	public void TakeDamage(float damage){
+		print("takedamage");
+		AudioSource.PlayClipAtPoint (hurtAudio, transform.position, 15f);
+		hp -= damage;
+	}
+
 	private void ChangePlayerState(float hInput,float vInput){
 		if (Mathf.Abs (hInput) > 0.05f || Mathf.Abs (vInput) > 0.05f) {
 			playerState = PlayerState.Walk;
@@ -80,16 +99,16 @@ public class PlayerController : MonoBehaviour {
 	/// Sets the player direction.
 	/// </summary>
 	private void SetPlayerDirection(){
-		float x = 0.8f;
+		float x = 1f;
 		if (myRigidBody.velocity.x > 0.05f) {
-			x = 0.8f;
+			x = 1f;
 		} else if (myRigidBody.velocity.x < -0.05f) {
-			x = -0.8f;
+			x = -1f;
 		} else {
 			x = 0;
 		}
 		if (x != 0) {
-			transform.localScale = new Vector3(x,0.8f,0f);
+			transform.localScale = new Vector3(x,1f,0f);
 		}
 	}
 }

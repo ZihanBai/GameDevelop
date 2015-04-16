@@ -30,7 +30,14 @@ public class EnemyController : MonoBehaviour {
 	/// </summary>
 	private AudioSource hurtAudio;
 
+	private float attackRate = 1f;
+	
+	private float attackTimer = 0f;
+	
+	private float attackInterval = 0f;
+
 	void Awake(){
+		attackInterval = 1 / attackRate;
 		hurtAudio = this.GetComponent<AudioSource> ();
 	}
 
@@ -44,9 +51,13 @@ public class EnemyController : MonoBehaviour {
 		if (enemyState != EnemyState.Die) {
 			if (Mathf.Abs (distance.magnitude) > 5f) {
 				enemyState = EnemyState.Walk;
-				transform.position = Vector3.Lerp(transform.position,targetPositon,1f*Time.deltaTime);
 			}else if(Mathf.Abs (distance.magnitude) < 5f){
 				enemyState = EnemyState.Attack;
+				attackTimer += Time.deltaTime;
+				if(attackTimer > attackInterval){
+					attackTimer -= attackInterval;
+					player.TakeDamage(5f);
+				}
 			}
 		}
 //		print ("*******" + enemyState);
