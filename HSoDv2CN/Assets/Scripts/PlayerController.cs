@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
 
 	public AudioClip hurtAudio;
 	
-	public float speed = 5f;
+	public float speed = 6f;
 	
 	public bool isShooting = false;
 	
@@ -44,8 +44,8 @@ public class PlayerController : MonoBehaviour {
 
 	void OnGUI(){
 		if (dead) {
-			GUI.Box(new Rect(100,100,100,90), "You Die!");
-			if(GUI.Button(new Rect(120,140,80,20), "Rerty")) {
+			GUI.Box(new Rect(300,150,100,70), "You Die!");
+			if(GUI.Button(new Rect(310,190,80,20), "Rerty")) {
 				Application.LoadLevel(0);
 			}
 		}
