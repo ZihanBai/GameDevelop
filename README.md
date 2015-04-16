@@ -5,7 +5,9 @@
 
 这是一个使用cocos2d-x开发的手机游戏。
 
-![FlappyBird](http://.png)
+<img src="https://github.com/ZihanBai/GameDevelop/blob/master/FlappyBird/Resources/image/Screen%20Shot1.png?raw=true" alt="Screen Shot1.png">
+
+<img src="https://github.com/ZihanBai/GameDevelop/blob/master/FlappyBird/Resources/image/Screen%20Shot2.png?raw=true" alt="Screen Shot2.png">
 
 ##DontTap（别踩白块儿）
 
