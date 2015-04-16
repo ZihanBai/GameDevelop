@@ -16,7 +16,7 @@
 这是跟随教程使用Unity3D制作的游戏，只完成了主角的基本功能，未实现所有功能。
 
 ##NightmareShooter
-来自Unity官方教程SurvivalShooter的3D游戏demo，已实现所有功能。
+<p style="text-indent:2em">来自Unity官方教程SurvivalShooter的3D游戏demo，已实现所有功能。</p>
 
 ##HSoDv2CN
 利用崩坏学园2及合金弹头的素材自制的2D小游戏，已完成基本功能。
