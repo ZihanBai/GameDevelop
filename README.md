@@ -47,6 +47,8 @@ PS：从使用引擎的比例可以看出我现在专心搞Unity3D了。至于co
 
 开始菜单（场景1）：
 
+运用到NGUI插件
+
 <img src="https://github.com/ZihanBai/GameDevelop/blob/master/MetalSlug/ScreenShot/ScreenShot1.png?raw=true" width="400" alt="MetalSlug（合金弹头）">
 
 游戏界面（场景2）：
@@ -68,6 +70,8 @@ PS：从使用引擎的比例可以看出我现在专心搞Unity3D了。至于co
 利用崩坏学园2及合金弹头的素材自制的2D小游戏，已完成基本功能。
 
 启动界面（场景1）：
+
+运用到NGUI插件
 
 <img src="https://github.com/ZihanBai/GameDevelop/blob/master/HSoDv2CN/ScreenShot/ScreenShot1.png?raw=true" width="400" alt="HSoDv2CN">
 
