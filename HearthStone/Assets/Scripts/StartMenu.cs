@@ -36,7 +36,7 @@ public class StartMenu : MonoBehaviour {
 		if (isDrawMov) {
 			GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), movTexture);
 			if(isShowMessage){
-				GUI.Label(new Rect(Screen.width/2 - 100,Screen.height/2,200,40),"Click again to stop play mov");
+				GUI.Label(new Rect(Screen.width/2 - 70,Screen.height/2,200,40),"Click again to stop play mov");
 			}
 		}
 	}
