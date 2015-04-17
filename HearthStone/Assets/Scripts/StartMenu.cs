@@ -9,6 +9,8 @@ public class StartMenu : MonoBehaviour {
 
 	public bool isShowMessage = false;
 
+	public TweenScale logoTweenScale;
+
 	// Use this for initialization
 	void Start () {
 		movTexture.loop = false;
@@ -42,6 +44,7 @@ public class StartMenu : MonoBehaviour {
 	private void StopMovie(){
 		movTexture.Stop ();
 		isDrawMov = false;
+		logoTweenScale.PlayForward ();
 	}
 
 }
