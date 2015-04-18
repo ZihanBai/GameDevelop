@@ -13,14 +13,19 @@ public class VSShow : MonoBehaviour {
 
 	void Awake(){
 		_instance = this;
-		this.gameObject.SetActive (false);
+		//this.gameObject.SetActive (false);
 	}
 
 	void Start(){
-		Show("hero1","hero3");
+		//Show("hero1","hero3");
 	}
 
-	void Show(string hero1Name,string hero2Name){
+	public void Show(string hero1Name,string hero2Name){
+		print (hero1Name + hero2Name);
+
+		PlayerPrefs.SetString ("hero1", hero1Name);
+		PlayerPrefs.SetString ("hero2", hero2Name);
+
 		BlackMask._instance.Show ();
 
 		hero1Tween.GetComponent<UISprite> ().spriteName = hero1Name;
