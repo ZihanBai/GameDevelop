@@ -8,11 +8,14 @@ public class Hero1Crystal : MonoBehaviour {
 	public int totalNum = 6;
 
 	public int maxNum;
-
+	
 	public UISprite[] crystals;
+
+	private UILabel label;
 
 	void Awake(){
 		maxNum = crystals.Length;
+		label = this.GetComponent<UILabel> ();
 	}
 
 	void Update(){
@@ -20,6 +23,7 @@ public class Hero1Crystal : MonoBehaviour {
 	}
 
 	void UpdateShow(){
+		label.text = string.Format ("{0}/{1}", useableNum, totalNum);
 		for (int i = totalNum; i < maxNum; ++i) {
 			crystals[i].gameObject.SetActive(false);
 		}
