@@ -5,7 +5,7 @@ public class Hero1Crystal : MonoBehaviour {
 
 	public int useableNum = 1;
 
-	public int totalNum = 6;
+	public int totalNum = 1;
 
 	public int maxNum;
 	

@@ -25,7 +25,7 @@ public class HistroyCard : MonoBehaviour {
 
 	public IEnumerator AddCard(){
 		GameObject go =	GameObject.Instantiate (cardPrefab, inCard.position, Quaternion.identity) as GameObject;
-		yield return 1;
+		yield return 0;
 		go.transform.position = inCard.position;
 		iTween.MoveTo (go, card1.position, 1f);
 		cardList.Add (go);
