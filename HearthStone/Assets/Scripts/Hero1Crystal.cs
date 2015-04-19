@@ -18,11 +18,7 @@ public class Hero1Crystal : MonoBehaviour {
 		label = this.GetComponent<UILabel> ();
 	}
 
-	void Update(){
-		UpdateShow ();
-	}
-
-	void UpdateShow(){
+	public void UpdateShow(){
 		label.text = string.Format ("{0}/{1}", useableNum, totalNum);
 		for (int i = totalNum; i < maxNum; ++i) {
 			crystals[i].gameObject.SetActive(false);
