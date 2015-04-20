@@ -27,8 +27,11 @@ public class MyCard : MonoBehaviour {
 		}
 	}
 
+	public string[] cardsName;
+
 	public void GetCard(){
 		GameObject go = NGUITools.AddChild (this.gameObject, cardPrefab);
+		go.GetComponent<UISprite> ().spriteName = cardsName [Random.Range (0, cardsName.Length)];
 		go.GetComponent<UISprite> ().width = 80;
 		Vector3 toPosition = card01.position + new Vector3 (xOffset * cards.Count, 0, 0);
 
