@@ -1,23 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hero2 : MonoBehaviour {
+public class Hero2 : Hero {
 
-	private UISprite sprite;
-	
-	void Awake(){
-		sprite = this.GetComponent<UISprite> ();
+	// Use this for initialization
+	void Start () {
 		string heroName = PlayerPrefs.GetString ("hero2");
 		sprite.spriteName = heroName;
 	}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
