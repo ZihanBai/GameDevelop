@@ -1,49 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum GameState{
+	CardGenerating,		//genera card
+	PlayCard,			//play mode
+	End					//game end
+}
+
 public class GameController : MonoBehaviour {
 
-	public GameObject cardPrefab;
+	public GameState gameState = GameState.CardGenerating;
+	public float cycleTime = 60f;
 
-	public Transform fromCard;
+	private UISprite wickpopeSprite;
+	private float timer = 0f;
+	private float wickpopeLength;
 
-	public Transform toCard;
+	void Awake(){
+		wickpopeSprite = this.transform.Find ("wickpope").GetComponent<UISprite> ();
+		wickpopeLength = wickpopeSprite.width;
+		wickpopeSprite.width = 0;
+	}
 
-	public string[] cardNams;
-
-	public float transformTime = 2f;
-
-	public int transformSpeed = 20;
-
-	private bool isTransforming = false;
-
-	private float timer;
-
-	private UISprite nowGenerateCard;
-
-	void Update(){
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			RandomGenerateCard();
-		}
-		if (isTransforming) {
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (gameState == GameState.PlayCard) {
 			timer += Time.deltaTime;
-			int index = (int)(timer / (1f/transformSpeed));
-			index %= cardNams.Length;
-			nowGenerateCard.spriteName = cardNams[index];
-			if(timer > transformTime){
-				//transform finishied
-				isTransforming = false;
-				timer = 0;
+			if(timer > cycleTime){
+				//end this section
+				TransformPlayer();
+			}else if((cycleTime - timer) <= 15){
+				wickpopeSprite.width = (int)(((cycleTime - timer) / 15f)*wickpopeLength);
 			}
 		}
 	}
 
-	public void RandomGenerateCard(){
-		GameObject go = NGUITools.AddChild (this.gameObject, cardPrefab);
-		go.transform.position = fromCard.position;
-		nowGenerateCard = go.GetComponent<UISprite> ();
-		iTween.MoveTo (go, toCard.position, 1f);
-		isTransforming = true;
+	private void TransformPlayer(){
 
 	}
+
 }

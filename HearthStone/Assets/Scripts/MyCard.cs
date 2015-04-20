@@ -29,7 +29,7 @@ public class MyCard : MonoBehaviour {
 
 	public void GetCard(){
 		GameObject go = NGUITools.AddChild (this.gameObject, cardPrefab);
-
+		go.GetComponent<UISprite> ().width = 80;
 		Vector3 toPosition = card01.position + new Vector3 (xOffset * cards.Count, 0, 0);
 
 		iTween.MoveTo (go, toPosition, 1f);

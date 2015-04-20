@@ -13,6 +13,10 @@ public class Hero2Crystal : MonoBehaviour {
 		label = this.GetComponent<UILabel> ();
 	}
 
+	void Update(){
+		UpdateShow ();
+	}
+
 	public void UpdateShow(){
 		label.text = string.Format ("{0}/{1}", useableNum, totalNum);
 	}
