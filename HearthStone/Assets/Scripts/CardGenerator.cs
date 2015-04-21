@@ -9,6 +9,8 @@ public class CardGenerator : MonoBehaviour {
 
 	public Transform toCard;
 
+	public MyCard myCard;
+
 	public string[] cardNams;
 
 	public float transformTime = 2f;
@@ -32,18 +34,21 @@ public class CardGenerator : MonoBehaviour {
 			nowGenerateCard.spriteName = cardNams[index];
 			if(timer > transformTime){
 				//transform finishied
+				//generate a card name
+				string cardName = cardNams[Random.Range(0,cardNams.Length)];
+				nowGenerateCard.spriteName = cardName;
 				isTransforming = false;
 				timer = 0;
 			}
 		}
 	}
 
-	public void RandomGenerateCard(){
+	public GameObject RandomGenerateCard(){
 		GameObject go = NGUITools.AddChild (this.gameObject, cardPrefab);
 		go.transform.position = fromCard.position;
 		nowGenerateCard = go.GetComponent<UISprite> ();
 		iTween.MoveTo (go, toCard.position, 1f);
 		isTransforming = true;
-
+		return go;
 	}
 }

@@ -20,7 +20,7 @@ public class MyCard : MonoBehaviour {
 
 	void Update(){
 		if (Input.GetKeyDown (KeyCode.Q)) {
-			GetCard();
+			AddCard();
 		}
 		if (Input.GetKeyDown (KeyCode.W)) {
 			LostCard();
@@ -29,9 +29,17 @@ public class MyCard : MonoBehaviour {
 
 	public string[] cardsName;
 
-	public void GetCard(){
-		GameObject go = NGUITools.AddChild (this.gameObject, cardPrefab);
-		go.GetComponent<UISprite> ().spriteName = cardsName [Random.Range (0, cardsName.Length)];
+	public void AddCard(GameObject cardGo = null){
+		GameObject go = null;
+		if (cardGo == null) {
+			//auto generate by self just for test
+			go = NGUITools.AddChild (this.gameObject, cardPrefab);
+			go.GetComponent<UISprite> ().spriteName = cardsName [Random.Range (0, cardsName.Length)];
+		} else {
+			go = cardGo;
+			go.transform.parent = this.transform;
+		}
+
 		go.GetComponent<UISprite> ().width = 80;
 		Vector3 toPosition = card01.position + new Vector3 (xOffset * cards.Count, 0, 0);
 
