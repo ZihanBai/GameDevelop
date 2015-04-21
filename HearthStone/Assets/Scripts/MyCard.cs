@@ -10,6 +10,8 @@ public class MyCard : MonoBehaviour {
 
 	public Transform card02;
 
+	private int startDepth = 8;
+
 	private float xOffset;
 
 	private List<GameObject> cards = new List<GameObject>();
@@ -45,15 +47,22 @@ public class MyCard : MonoBehaviour {
 
 		iTween.MoveTo (go, toPosition, 1f);
 		cards.Add (go);
+		go.GetComponent<UISprite> ().depth = startDepth + cards.Count;
 	}
 
 	public void LostCard(){
 		int index = Random.Range (0, cards.Count);
 		Destroy (cards [index]);
 		cards.RemoveAt (index);
+		UpdateShow ();
+
+	}
+
+	private void UpdateShow(){
 		for (int i = 0; i < cards.Count; ++i) {
 			Vector3 toPosition = card01.position + new Vector3 (xOffset * i, 0, 0);
 			iTween.MoveTo (cards[i], toPosition, 1f);
+			cards[i].GetComponent<UISprite> ().depth = startDepth + i;
 		}
 	}
 
