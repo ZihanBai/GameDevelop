@@ -47,7 +47,7 @@ public class MyCard : MonoBehaviour {
 
 		iTween.MoveTo (go, toPosition, 1f);
 		cards.Add (go);
-		go.GetComponent<UISprite> ().depth = startDepth + cards.Count;
+		go.GetComponent<Card> ().SetDepth( startDepth + (cards.Count - 1) * 2);
 	}
 
 	public void LostCard(){
@@ -62,7 +62,7 @@ public class MyCard : MonoBehaviour {
 		for (int i = 0; i < cards.Count; ++i) {
 			Vector3 toPosition = card01.position + new Vector3 (xOffset * i, 0, 0);
 			iTween.MoveTo (cards[i], toPosition, 1f);
-			cards[i].GetComponent<UISprite> ().depth = startDepth + i;
+			cards[i].GetComponent<Card> ().SetDepth( startDepth + i*2);
 		}
 	}
 

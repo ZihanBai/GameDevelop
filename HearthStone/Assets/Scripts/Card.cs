@@ -5,11 +5,18 @@ public class Card : MonoBehaviour {
 
 	private UISprite sprite;
 
+	private UILabel harmLabel;
+
+	private UILabel hpLabel;
+
+	void Awake(){
+		sprite = this.GetComponent<UISprite>();
+		harmLabel = transform.Find ("harmLabel").GetComponent<UILabel> ();
+		hpLabel = transform.Find("hpLabel").GetComponent<UILabel> ();
+	}
+
 	private string CardName{
 		get{
-			if(sprite == null){
-				sprite = this.GetComponent<UISprite>();
-			}
 			return sprite.spriteName;
 		}
 	}
@@ -20,6 +27,12 @@ public class Card : MonoBehaviour {
 		if (isPressed) {
 			DesCard._instance.ShowCard(CardName);
 		}
+	}
+
+	public void SetDepth(int depth){
+		sprite.depth = depth;
+		harmLabel.depth = depth + 1;
+		hpLabel.depth = depth + 1;
 	}
 
 }
