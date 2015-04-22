@@ -9,8 +9,6 @@ public class CardGenerator : MonoBehaviour {
 
 	public Transform toCard;
 
-	public MyCard myCard;
-
 	public string[] cardNams;
 
 	public float transformTime = 2f;
