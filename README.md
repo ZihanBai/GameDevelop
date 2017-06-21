@@ -87,6 +87,6 @@ PS：
 
 欢迎大家关注我的新浪微博：[卖萌程序员可乐君](http://weibo.com/allenkashiwa)
 
-也欢迎来访我的CSDN博客：[木辛水函](http://blog.csdn.net/baizihan)
+也欢迎来访我的博客：[Allen Kashiwa](http://baizihan.me/)
 
 坚持游戏梦想，喵~
